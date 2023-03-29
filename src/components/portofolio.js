@@ -21,7 +21,7 @@ const Portofolio = () => {
         Portofolio
       </h2>
       <hr className="h-px my-10 flex bg-gray-200 border-0 dark:bg-gray-700 m-20" />
-      <div className="lg:flex lg:justify-between lg:mr-28 lg:ml-28 sm:ml-40 max-sm:ml-16 mb-16">
+      <div className="lg:flex lg:justify-between lg:mr-28 lg:ml-28 sm:ml-40 max-sm:ml-12 mb-16">
         <div className="block max-w-xs h-fit sm:mb-10 max-sm:mb-10 rounded-lg bg-white shadow-lg dark:bg-neutral-700">
           <Image
             className="rounded-t-lg mt-3 mb-5"

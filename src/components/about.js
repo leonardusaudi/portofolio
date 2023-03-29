@@ -12,7 +12,7 @@ const About = () => {
       <div className="flex flex-wrap">
         <Image
           src="/profile.jpeg"
-          className="lg:h-auto lg:w-60 sm:h-72 sm:w-52 sm:ml-28 max-sm:ml-5 max-sm:h-72 max-sm:w-52 max-w-sm rounded-lg shadow-none transition-shadow duration-300 ease-in-out hover:shadow-lg hover:shadow-black/30"
+          className="lg:h-auto lg:w-60 sm:h-72 sm:w-52 sm:ml-28 max-sm:ml-2 max-sm:h-72 max-sm:w-52 max-w-sm rounded-lg shadow-none transition-shadow duration-300 ease-in-out hover:shadow-lg hover:shadow-black/30"
           alt=""
           width={200}
           height={200}
