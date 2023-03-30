@@ -75,11 +75,11 @@ const Portofolio = () => {
       <div className="lg:flex lg:justify-between lg:mr-28 lg:ml-28 sm:ml-40 max-sm:ml-12 mb-16">
         <div className="block max-w-xs h-fit sm:mb-10 max-sm:mb-10 rounded-lg bg-white shadow-lg dark:bg-neutral-700">
           <Image
-            className="hover:scale-105 ease-in duration-200 rounded-t-lg mt-3 mb-5"
+            className="hover:scale-105 ease-in duration-200 rounded-t-lg p-5"
             src="/2.png"
             alt=""
             width={300}
-            height={200}
+            height={100}
             onClick={() => setIsViewerPutter(true)}
           />
           <div className="p-6">
@@ -109,7 +109,7 @@ const Portofolio = () => {
         <div className="block max-w-xs h-fit sm:mb-10 max-sm:mb-10 rounded-lg bg-white shadow-lg dark:bg-neutral-700">
           <div className="flex justify-center">
             <Image
-              className="hover:scale-105 ease-in duration-200 rounded-t-lg mt-5 mr-20 ml-20"
+              className="hover:scale-105 ease-in duration-200 rounded-t-lg mt-2 mr-20 ml-20"
               src="/4.png"
               alt=""
               width={172}
@@ -141,7 +141,7 @@ const Portofolio = () => {
         </div>
         <div className="block max-w-xs h-fit sm:mb-10 max-sm:mb-10 rounded-lg bg-white shadow-lg dark:bg-neutral-700">
           <Image
-            className="hover:scale-105 ease-in duration-200 rounded-t-lg mt-3 mb-6"
+            className="hover:scale-105 ease-in duration-200 rounded-t-lg mt-3 mb-3"
             src="/5.png"
             alt=""
             width={295}
