@@ -1,11 +1,15 @@
 import React, { useState, useCallback } from "react";
 import ImageViewer from "react-simple-image-viewer";
 import Image from "next/image";
+import { IoIosArrowBack, IoIosArrowForward, IoIosClose } from "react-icons/io";
 
 const Portofolio = () => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [isExpanded1, setIsExpanded1] = useState(false);
   const [isExpanded2, setIsExpanded2] = useState(false);
+  const [isViewerPutter, setIsViewerPutter] = useState(false);
+  const [isViewerEcommerce, setIsViewerEcommerce] = useState(false);
+  const [isViewerWebmin, setIsViewerWebmin] = useState(false);
 
   const toggleCollapse = () => {
     setIsExpanded(!isExpanded);
@@ -17,10 +21,6 @@ const Portofolio = () => {
     setIsExpanded2(!isExpanded2);
   };
 
-  const [isViewerPutter, setIsViewerPutter] = useState(false);
-  const [isViewerEcommerce, setIsViewerEcommerce] = useState(false);
-  const [isViewerWebmin, setIsViewerWebmin] = useState(false);
-
   const putter = [
     "/putter-1.png",
     "/putter-2.png",
@@ -29,7 +29,9 @@ const Portofolio = () => {
     "/putter-5.png",
     "/putter-6.png",
   ];
+
   const ecommerce = ["/ecommerce-1.png", "/ecommerce-2.png"];
+
   const webmin = [
     "/webmin-1.png",
     "/webmin-2.png",
@@ -47,6 +49,9 @@ const Portofolio = () => {
             backgroundColor: "rgba(0,0,0,0.9)",
           }}
           closeOnClickOutside={true}
+          leftArrowComponent={<IoIosArrowBack size={30}/>}
+          rightArrowComponent={<IoIosArrowForward size={30}/>}
+          closeComponent={<IoIosClose size={30}/>}
         />
       ) : isViewerEcommerce ? (
         <ImageViewer
@@ -56,6 +61,9 @@ const Portofolio = () => {
             backgroundColor: "rgba(0,0,0,0.9)",
           }}
           closeOnClickOutside={true}
+          leftArrowComponent={<IoIosArrowBack size={30}/>}
+          rightArrowComponent={<IoIosArrowForward size={30}/>}
+          closeComponent={<IoIosClose size={30}/>}
         />
       ) : isViewerWebmin ? (
         <ImageViewer
@@ -65,6 +73,9 @@ const Portofolio = () => {
             backgroundColor: "rgba(0,0,0,0.9)",
           }}
           closeOnClickOutside={true}
+          leftArrowComponent={<IoIosArrowBack size={30}/>}
+          rightArrowComponent={<IoIosArrowForward size={30}/>}
+          closeComponent={<IoIosClose size={30}/>}
         />
       ) : null}
 

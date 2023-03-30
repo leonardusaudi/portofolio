@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
+import { AiOutlineMenu } from "react-icons/ai";
+import { IoIosArrowBack } from "react-icons/io";
 import { Link } from "react-scroll";
 
 const Navbar = () => {
@@ -76,10 +77,8 @@ const Navbar = () => {
               : "fixed left-[-100%] top-0 p-10 ease-in duration-500"
           }
         >
-          <div className="flex w-full items-center justify-end">
-            <div className="cursor-pointer hover:scale-110 ease-in duration-200 text-gray-900 bg-white max-sm:mb-10 hover:bg-gray-100 border border-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 font-medium rounded-full text-sm px-2.5 py-2.5 text-center inline-flex items-center dark:focus:ring-gray-600 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700" onClick={handleNav}>
-              <AiOutlineClose size={20} />
-            </div>
+          <div className="flex items-center justify-end cursor-pointer hover:scale-95 ease-in duration-200 mt-5 mb-10" onClick={handleNav}>
+              <IoIosArrowBack size={29} className="text-gray-400"/>
           </div>
           <div className="flex-col py-4">
             <ul>
