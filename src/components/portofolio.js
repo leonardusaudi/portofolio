@@ -49,9 +49,9 @@ const Portofolio = () => {
             backgroundColor: "rgba(0,0,0,0.9)",
           }}
           closeOnClickOutside={true}
-          leftArrowComponent={<IoIosArrowBack size={30}/>}
-          rightArrowComponent={<IoIosArrowForward size={30}/>}
-          closeComponent={<IoIosClose size={30}/>}
+          leftArrowComponent={<IoIosArrowBack size={30} className="text-gray-500"/>}
+          rightArrowComponent={<IoIosArrowForward size={30} className="text-gray-500"/>}
+          closeComponent={<IoIosClose size={30} className="text-gray-500"/>}
         />
       ) : isViewerEcommerce ? (
         <ImageViewer
@@ -61,9 +61,9 @@ const Portofolio = () => {
             backgroundColor: "rgba(0,0,0,0.9)",
           }}
           closeOnClickOutside={true}
-          leftArrowComponent={<IoIosArrowBack size={30}/>}
-          rightArrowComponent={<IoIosArrowForward size={30}/>}
-          closeComponent={<IoIosClose size={30}/>}
+          leftArrowComponent={<IoIosArrowBack size={30} className="text-gray-500"/>}
+          rightArrowComponent={<IoIosArrowForward size={30} className="text-gray-500"/>}
+          closeComponent={<IoIosClose size={30} className="text-gray-500"/>}
         />
       ) : isViewerWebmin ? (
         <ImageViewer
@@ -73,9 +73,9 @@ const Portofolio = () => {
             backgroundColor: "rgba(0,0,0,0.9)",
           }}
           closeOnClickOutside={true}
-          leftArrowComponent={<IoIosArrowBack size={30}/>}
-          rightArrowComponent={<IoIosArrowForward size={30}/>}
-          closeComponent={<IoIosClose size={30}/>}
+          leftArrowComponent={<IoIosArrowBack size={30} className="text-gray-500"/>}
+          rightArrowComponent={<IoIosArrowForward size={30} className="text-gray-500"/>}
+          closeComponent={<IoIosClose size={30} className="text-gray-500"/>}
         />
       ) : null}
 
