@@ -120,7 +120,7 @@ const Portofolio = () => {
         <div className="block max-w-xs h-fit sm:mb-10 max-sm:mb-10 rounded-lg bg-white shadow-lg dark:bg-neutral-700">
           <div className="flex justify-center">
             <Image
-              className="cursor-pointer shadow-none transition-shadow duration-300 ease-in-out hover:shadow-lg hover:shadow-gray-300/30 rounded-t-lg mt-2 mb-8 pr-20 pl-20"
+              className="cursor-pointer shadow-none transition-shadow duration-300 ease-in-out hover:shadow-lg hover:shadow-gray-300/30 rounded-t-lg mt-5 mb-5 pr-20 pl-20"
               src="/4.png"
               alt=""
               width={400}
