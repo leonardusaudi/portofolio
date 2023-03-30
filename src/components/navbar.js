@@ -12,7 +12,7 @@ const Navbar = () => {
 
   return (
     <div>
-      <nav className="fixed w-full h-20 shadow-md bg-white z-20">
+      <nav className="fixed w-full h-20 shadow-md bg-white">
         <div className="flex justify-between items-left w-full h-full px-4 2xl:px-16">
           <Link className="cursor-pointer" activeClass="active" to="main" spy={true} smooth={true} offset={0} duration={500}>
             <div className="flex">

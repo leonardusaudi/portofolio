@@ -4,7 +4,7 @@ import { Link } from "react-scroll";
 
 const Main = () => {
   return (
-    <div className="relative" id="main">
+    <div id="main">
       <div className="flex w-full p-20">
         <div className="h-full w-full flex flex-col justify-end pb-4 lg:pb-0 lg:justify-center">
           <div className="h-1/2 flex flex-col justify-center items-center text-center lg:items-start lg:text-left">

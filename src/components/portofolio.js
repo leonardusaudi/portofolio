@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
+import ImageViewer from "react-simple-image-viewer";
 import Image from "next/image";
 
 const Portofolio = () => {
@@ -15,8 +16,58 @@ const Portofolio = () => {
   const toggleCollapse2 = () => {
     setIsExpanded2(!isExpanded2);
   };
+
+  const [isViewerPutter, setIsViewerPutter] = useState(false);
+  const [isViewerEcommerce, setIsViewerEcommerce] = useState(false);
+  const [isViewerWebmin, setIsViewerWebmin] = useState(false);
+
+  const putter = [
+    "/putter-1.png",
+    "/putter-2.png",
+    "/putter-3.png",
+    "/putter-4.png",
+    "/putter-5.png",
+    "/putter-6.png",
+  ];
+  const ecommerce = ["/ecommerce-1.png", "/ecommerce-2.png"];
+  const webmin = [
+    "/webmin-1.png",
+    "/webmin-2.png",
+    "/webmin-3.png",
+    "/webmin-4.png",
+  ];
+
   return (
     <div id="portofolio">
+      {isViewerPutter ? (
+        <ImageViewer
+          src={putter}
+          onClose={() => setIsViewerPutter(false)}
+          backgroundStyle={{
+            backgroundColor: "rgba(0,0,0,0.9)",
+          }}
+          closeOnClickOutside={true}
+        />
+      ) : isViewerEcommerce ? (
+        <ImageViewer
+          src={ecommerce}
+          onClose={() => setIsViewerEcommerce(false)}
+          backgroundStyle={{
+            backgroundColor: "rgba(0,0,0,0.9)",
+          }}
+          closeOnClickOutside={true}
+        />
+      ) : isViewerWebmin ? (
+        <ImageViewer
+          src={webmin}
+          onClose={() => setIsViewerWebmin(false)}
+          backgroundStyle={{
+            backgroundColor: "rgba(0,0,0,0.9)",
+          }}
+          closeOnClickOutside={true}
+        />
+      ) : null}
+
       <h2 className="flex justify-center text-3xl text-gray-600 dark:text-white">
         Portofolio
       </h2>
@@ -24,11 +75,12 @@ const Portofolio = () => {
       <div className="lg:flex lg:justify-between lg:mr-28 lg:ml-28 sm:ml-40 max-sm:ml-12 mb-16">
         <div className="block max-w-xs h-fit sm:mb-10 max-sm:mb-10 rounded-lg bg-white shadow-lg dark:bg-neutral-700">
           <Image
-            className="rounded-t-lg mt-3 mb-5"
+            className="hover:scale-105 ease-in duration-200 rounded-t-lg mt-3 mb-5"
             src="/2.png"
             alt=""
             width={300}
             height={200}
+            onClick={() => setIsViewerPutter(true)}
           />
           <div className="p-6">
             <h5 className="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50">
@@ -57,11 +109,12 @@ const Portofolio = () => {
         <div className="block max-w-xs h-fit sm:mb-10 max-sm:mb-10 rounded-lg bg-white shadow-lg dark:bg-neutral-700">
           <div className="flex justify-center">
             <Image
-              className="rounded-t-lg mt-5 mr-20 ml-20"
+              className="hover:scale-105 ease-in duration-200 rounded-t-lg mt-5 mr-20 ml-20"
               src="/4.png"
               alt=""
               width={172}
               height={179}
+              onClick={() => setIsViewerEcommerce(true)}
             />
           </div>
           <div className="p-6">
@@ -87,13 +140,14 @@ const Portofolio = () => {
           </div>
         </div>
         <div className="block max-w-xs h-fit sm:mb-10 max-sm:mb-10 rounded-lg bg-white shadow-lg dark:bg-neutral-700">
-            <Image
-              className="rounded-t-lg mt-3 mb-6"
-              src="/5.png"
-              alt=""
-              width={295}
-              height={200}
-            />
+          <Image
+            className="hover:scale-105 ease-in duration-200 rounded-t-lg mt-3 mb-6"
+            src="/5.png"
+            alt=""
+            width={295}
+            height={200}
+            onClick={() => setIsViewerWebmin(true)}
+          />
           <div className="p-6">
             <h5 className="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50">
               Tanjidor Ecommerce Webmin
@@ -101,10 +155,12 @@ const Portofolio = () => {
             <p className="mb-7 text-sm font-light leading-tight text-neutral-800 dark:text-neutral-50">
               (Web App)
             </p>
-            {isExpanded2 && (<p className="mb-4 text-base text-neutral-600 dark:text-neutral-200">
-              I'm helping a company create a web application (Laravel) to make
-              the admin easier in the process of selling goods.
-            </p>)}
+            {isExpanded2 && (
+              <p className="mb-4 text-base text-neutral-600 dark:text-neutral-200">
+                I'm helping a company create a web application (Laravel) to make
+                the admin easier in the process of selling goods.
+              </p>
+            )}
             <button
               type="button"
               className="hover:scale-105 ease-in duration-200 inline-block rounded bg-emerald-500 px-6 pt-2.5 pb-2 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] hover:bg-emerald-700 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-emerald-700 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-emereald-700"
@@ -115,7 +171,7 @@ const Portofolio = () => {
           </div>
         </div>
       </div>
-      <hr className="h-px my-10 flex bg-gray-200 border-0 dark:bg-gray-700 m-20"/>
+      <hr className="h-px my-10 flex bg-gray-200 border-0 dark:bg-gray-700 m-20" />
       <hr className="w-48 h-1 mx-auto my-4 bg-gray-100 border-0 rounded md:my-10 dark:bg-gray-700" />
     </div>
   );

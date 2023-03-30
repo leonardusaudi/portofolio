@@ -6,7 +6,6 @@ import About from "../components/about";
 import Portofolio from "@/components/portofolio";
 import Contact from "@/components/contact";
 
-
 export default function Home() {
   return (
     <>
@@ -16,7 +15,9 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="icon" href="/logo.png" />
       </Head>
-      <Navbar />
+      <div className="z-20">
+        <Navbar />
+      </div>
       <Main />
       <About />
       <Portofolio />
