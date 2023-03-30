@@ -1,18 +1,27 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import { Link } from "react-scroll";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [top, setTop] = useState(true);
 
   const handleNav = () => {
     setMenuOpen(!menuOpen);
   };
 
+  useEffect(() => {
+    const scrollHandler = () => {
+      window.pageYOffset >= 90 ? setTop(false) : setTop(true)
+    };
+    window.addEventListener('scroll', scrollHandler);
+    return () => window.removeEventListener('scroll', scrollHandler);
+  }, [top]);
+
   return (
     <div>
-      <nav className="fixed w-full h-20 shadow-md bg-white">
+      <nav className={`fixed w-full h-20 ${!top && `shadow-md bg-white`}`}>
         <div className="flex justify-between items-left w-full h-full px-4 2xl:px-16">
           <Link className="cursor-pointer" activeClass="active" to="main" spy={true} smooth={true} offset={0} duration={500}>
             <div className="flex">
