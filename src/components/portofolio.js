@@ -86,10 +86,10 @@ const Portofolio = () => {
       <div className="lg:flex lg:justify-between lg:mr-28 lg:ml-28 sm:ml-40 max-sm:ml-12 mb-16">
         <div className="block max-w-xs h-fit sm:mb-10 max-sm:mb-10 rounded-lg bg-white shadow-lg dark:bg-neutral-700">
           <Image
-            className="cursor-pointer shadow-none transition-shadow duration-300 ease-in-out hover:shadow-lg hover:shadow-gray-300/30 rounded-t-lg mb-5 p-5"
+            className="cursor-pointer shadow-none transition-shadow duration-300 ease-in-out hover:shadow-lg hover:shadow-gray-300/30 rounded-t-lg mb-3 p-5"
             src="/2.png"
             alt=""
-            width={300}
+            width={320}
             height={100}
             onClick={() => setIsViewerPutter(true)}
           />
@@ -152,7 +152,7 @@ const Portofolio = () => {
         </div>
         <div className="block max-w-xs h-fit sm:mb-10 max-sm:mb-10 rounded-lg bg-white shadow-lg dark:bg-neutral-700">
           <Image
-            className="cursor-pointer shadow-none transition-shadow duration-300 ease-in-out hover:shadow-lg hover:shadow-gray-300/30 rounded-t-lg mt-3 mb-5 w-full"
+            className="cursor-pointer shadow-none transition-shadow duration-300 ease-in-out hover:shadow-lg hover:shadow-gray-300/30 rounded-t-lg pt-3 mb-5 w-full"
             src="/5.png"
             alt=""
             width={295}
