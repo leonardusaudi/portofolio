@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import { Link } from "react-scroll";
+import { motion } from "framer-motion";
 
 const Main = () => {
   return (
@@ -9,7 +10,17 @@ const Main = () => {
         <div className="h-full w-full flex flex-col justify-end pb-4 lg:pb-0 lg:justify-center">
           <div className="h-1/2 flex flex-col justify-center items-center text-center lg:items-start lg:text-left">
             <div className="flex justify-between">
-              <div className="mt-28 lg:ml-28 lg:w-96 sm:justify-center sm:ml-14 sm:mr-10">
+              <motion.div
+                className="mt-28 lg:ml-28 lg:w-96 sm:justify-center sm:ml-14 sm:mr-10"
+                initial={{ opacity: 0, scale: 0.5 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: -1 }}
+                transition={{
+                  duration: 0.8,
+                  delay: 0.5,
+                  ease: [0, 0.71, 0.2, 1.01],
+                }}
+              >
                 <h1 className="text-4xl lg:text-5xl font-medium text-gray-600 pb-5">
                   Hi! This is Leo
                 </h1>
@@ -19,12 +30,20 @@ const Main = () => {
                   client's company operations, also have an attractive
                   appearance and are easy for users to use.
                 </p>
-                <Link className="cursor-pointer" activeClass="active" to="about" spy={true} smooth={true} offset={0} duration={500}>
-                <button className="text-white bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl hover:scale-110 ease-in duration-200 focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2">
-                  Go to next
-                </button>
+                <Link
+                  className="cursor-pointer"
+                  activeClass="active"
+                  to="about"
+                  spy={true}
+                  smooth={true}
+                  offset={0}
+                  duration={500}
+                >
+                  <button className="text-white bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl hover:scale-110 ease-in duration-200 focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2">
+                    Go to next
+                  </button>
                 </Link>
-              </div>
+              </motion.div>
               <Image
                 src="/image-mockups.png"
                 className="object-contains mt-10 ml-32 hidden lg:flex"
