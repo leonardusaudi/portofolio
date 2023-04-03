@@ -15,13 +15,13 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="icon" href="/logo.png" />
       </Head>
-      <div className="z-20">
+      <div className="relative z-10">
         <Navbar />
       </div>
-      <Main />
-      <About />
-      <Portofolio />
-      <Contact />
+        <Main />
+        <About />
+        <Portofolio />
+        <Contact />
     </>
   );
 }

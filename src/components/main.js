@@ -1,9 +1,40 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
 import { Link } from "react-scroll";
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+
+const boxVariant = {
+  visible: { opacity: 1, scale: 1 },
+  hidden: { opacity: 0, scale: 0 },
+};
+
+const boxVariant1 = {
+  hidden: { opacity: 0, x: "100vw" },
+  visible: { opacity: 1, x: 0 },
+};
 
 const Main = () => {
+  const control = useAnimation();
+  const [ref, inView] = useInView();
+  const [ref1, inView1] = useInView();
+
+  useEffect(() => {
+    if (inView) {
+      control.start("visible");
+    } else {
+      control.start("hidden");
+    }
+  }, [control, inView]);
+
+  useEffect(() => {
+    if (inView1) {
+      control.start("visible");
+    } else {
+      control.start("hidden");
+    }
+  }, [control, inView1]);
+
   return (
     <div id="main">
       <div className="flex w-full p-20">
@@ -12,11 +43,12 @@ const Main = () => {
             <div className="flex justify-between">
               <motion.div
                 className="mt-28 lg:ml-28 lg:w-96 sm:justify-center sm:ml-14 sm:mr-10"
-                initial={{ opacity: 0, scale: 0.5 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: -1 }}
+                initial="hidden"
+                animate={control}
+                ref={ref}
+                variants={boxVariant}
                 transition={{
-                  duration: 0.8,
+                  duration: 1,
                   delay: 0.5,
                   ease: [0, 0.71, 0.2, 1.01],
                 }}
@@ -44,13 +76,24 @@ const Main = () => {
                   </button>
                 </Link>
               </motion.div>
-              <Image
-                src="/image-mockups.png"
-                className="object-contains mt-10 ml-32 hidden lg:flex"
-                width={400}
-                height={200}
-                alt=""
-              />
+              <motion.div
+                initial="hidden"
+                animate={control}
+                ref={ref1}
+                variants={boxVariant1}
+                transition={{
+                  type: "linear",
+                  duration: 1
+                }}
+              >
+                <Image
+                  src="/image-mockups.png"
+                  className="object-contains mt-10 ml-32 hidden lg:flex"
+                  width={400}
+                  height={200}
+                  alt=""
+                />
+              </motion.div>
             </div>
           </div>
         </div>
