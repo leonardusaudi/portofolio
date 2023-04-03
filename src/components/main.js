@@ -77,13 +77,14 @@ const Main = () => {
                 </Link>
               </motion.div>
               <motion.div
+                className="hidden lg:flex"
                 initial="hidden"
                 animate={control}
                 ref={ref1}
                 variants={boxVariant1}
                 transition={{
                   type: "linear",
-                  duration: 1
+                  duration: 1,
                 }}
               >
                 <Image
