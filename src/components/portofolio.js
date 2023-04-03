@@ -2,25 +2,25 @@ import React, { useState, useEffect } from "react";
 import ImageViewer from "react-simple-image-viewer";
 import Image from "next/image";
 import { IoIosArrowBack, IoIosArrowForward, IoIosClose } from "react-icons/io";
-import { motion, useAnimation } from "framer-motion";
-import { useInView } from "react-intersection-observer";
+// import { motion, useAnimation } from "framer-motion";
+// import { useInView } from "react-intersection-observer";
 
-const boxVariant = {
-  visible: { opacity: 1, scale: 1 },
-  hidden: { opacity: 0, scale: 0 },
-};
+// const boxVariant = {
+//   visible: { opacity: 1, scale: 1 },
+//   hidden: { opacity: 0, scale: 0 },
+// };
 
 const Portofolio = () => {
-  const control = useAnimation();
-  const [ref, inView] = useInView();
+  // const control = useAnimation();
+  // const [ref, inView] = useInView();
 
-  useEffect(() => {
-    if (inView) {
-      control.start("visible");
-    } else {
-      control.start("hidden");
-    }
-  }, [control, inView]);
+  // useEffect(() => {
+  //   if (inView) {
+  //     control.start("visible");
+  //   } else {
+  //     control.start("hidden");
+  //   }
+  // }, [control, inView]);
 
   const [isExpanded, setIsExpanded] = useState(false);
   const [isExpanded1, setIsExpanded1] = useState(false);
@@ -106,7 +106,7 @@ const Portofolio = () => {
       </h2>
       <hr className="h-px my-10 flex bg-gray-200 border-0 dark:bg-gray-700 m-20" />
       <div className="lg:flex lg:justify-between lg:mr-28 lg:ml-28 sm:ml-40 max-sm:ml-12 mb-16">
-      <motion.div
+      {/* <motion.div
           initial="hidden"
           animate={control}
           ref={ref}
@@ -116,7 +116,7 @@ const Portofolio = () => {
             delay: 0.5,
             ease: [0, 0.71, 0.2, 1.01],
           }}
-        >
+        > */}
         <div className="block max-w-xs h-fit sm:mb-10 max-sm:mb-10 rounded-lg bg-white shadow-lg dark:bg-neutral-700">
           <Image
             className="cursor-pointer shadow-none transition-shadow duration-300 ease-in-out hover:shadow-lg hover:shadow-gray-300/30 rounded-t-lg mb-3 p-5"
@@ -150,8 +150,8 @@ const Portofolio = () => {
             </button>
           </div>
         </div>
-        </motion.div>
-        <motion.div
+        {/* </motion.div> */}
+        {/* <motion.div
           initial="hidden"
           animate={control}
           ref={ref}
@@ -161,7 +161,7 @@ const Portofolio = () => {
             delay: 0.5,
             ease: [0, 0.71, 0.2, 1.01],
           }}
-        >
+        > */}
         <div className="block max-w-xs h-fit sm:mb-10 max-sm:mb-10 rounded-lg bg-white shadow-lg dark:bg-neutral-700">
           <div className="flex justify-center">
             <Image
@@ -195,8 +195,8 @@ const Portofolio = () => {
             </button>
           </div>
         </div>
-        </motion.div>
-        <motion.div
+        {/* </motion.div> */}
+        {/* <motion.div
           initial="hidden"
           animate={control}
           ref={ref}
@@ -206,7 +206,7 @@ const Portofolio = () => {
             delay: 0.5,
             ease: [0, 0.71, 0.2, 1.01],
           }}
-        >
+        > */}
         <div className="block max-w-xs h-fit sm:mb-10 max-sm:mb-10 rounded-lg bg-white shadow-lg dark:bg-neutral-700">
           <Image
             className="cursor-pointer shadow-none transition-shadow duration-300 ease-in-out hover:shadow-lg hover:shadow-gray-300/30 rounded-t-lg pt-3 mb-5 w-full"
@@ -238,7 +238,7 @@ const Portofolio = () => {
             </button>
           </div>
         </div>
-        </motion.div>
+        {/* </motion.div> */}
       </div>
       <hr className="h-px my-10 flex bg-gray-200 border-0 dark:bg-gray-700 m-20" />
       <hr className="w-48 h-1 mx-auto my-4 bg-gray-100 border-0 rounded md:my-10 dark:bg-gray-700" />
